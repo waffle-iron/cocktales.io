@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Laravel',
+    'name' => 'Cocktales',
 
     /*
     |--------------------------------------------------------------------------
@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Cocktales\Providers\AppServiceProvider::class,
+        Cocktales\Providers\AuthServiceProvider::class,
+        // Cocktales\Providers\BroadcastServiceProvider::class,
+        Cocktales\Providers\EventServiceProvider::class,
+        Cocktales\Providers\RouteServiceProvider::class,
 
     ],
 
