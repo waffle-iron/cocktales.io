@@ -1,0 +1,13 @@
+/src/bootstrap/compiled.php
+.vagrant
+vendor/
+composer.phar
+.env
+.env.*.php
+.env.php
+.DS_Store
+Thumbs.db
+tmp/
+phpda.svg
+/vendor/node_modules
+/node_modules/
