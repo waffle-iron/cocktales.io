@@ -2,72 +2,91 @@
 
 namespace Cocktales\Providers;
 
-use Illuminate\Support\Facades\Route;
+use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider
 {
     /**
-     * This namespace is applied to your controller routes.
+     * @var \Cocktales\Http\ResponseFactory
+     */
+    protected $responseFactory;
+
+    /**
+     * This namespace is applied to the controller routes in your routes file.
      *
      * In addition, it is set as the URL generator's root namespace.
      *
      * @var string
      */
-    protected $namespace = 'Cocktales\Http\Controllers';
+    protected $namespace = 'Opia\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
      *
+     * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    public function boot()
+    public function boot(Router $router)
     {
-        //
+        parent::boot($router);
 
-        parent::boot();
+        //
     }
 
     /**
      * Define the routes for the application.
      *
+     * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    public function map()
+    public function map(Router $router)
     {
-        $this->mapApiRoutes();
+        $this->responseFactory = $this->app->make('Cocktales\Http\ResponseFactory');
 
-        $this->mapWebRoutes();
+        // Group controllers into the right namespace
+        $router->group(['namespace' => $this->namespace], function (Router $router) {
 
-        //
+            $this->mapApiRoutes($router);
+
+            $this->mapAppRoutes($router);
+
+            $this->mapPublicRoutes($router);
+        });
+    }
+
+    private function mapAppRoutes(Router $router)
+    {
+        // Map normal ui routes
+        $router->group(['middleware' => 'web'], function (Router $router) {
+            // Default
+            $router->any('/', function () {
+                return $this->responseFactory->makeViewResponse('http.layouts.welcome');
+            });
+        });
     }
 
     /**
-     * Define the "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
+     * @param $class
+     * @param $method
+     * @param array $params
+     * @return \Closure
      */
-    protected function mapWebRoutes()
+    private function lazyCall($class, $method, $params = [])
     {
-        Route::middleware('web')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/web.php'));
+        return function () use ($class, $method, $params) {
+            return $this->app->call($class . '@' . $method, $params);
+        };
     }
 
     /**
-     * Define the "api" routes for the application.
-     *
-     * These routes are typically stateless.
-     *
-     * @return void
+     * @param Router $router
      */
-    protected function mapApiRoutes()
+    private function mapApiRoutes(Router $router)
     {
-        Route::prefix('api')
-             ->middleware('api')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/api.php'));
+    }
+
+    private function mapPublicRoutes(Router $router)
+    {
     }
 }
