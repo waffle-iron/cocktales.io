@@ -8,7 +8,7 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 class RouteServiceProvider extends ServiceProvider
 {
     /**
-     * @var \Cocktales\Http\ResponseFactory
+     * @var \Cocktales\Application\Http\ResponseFactory
      */
     protected $responseFactory;
 
@@ -19,7 +19,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'Opia\Http\Controllers';
+    protected $namespace = 'Opia\Application\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -42,7 +42,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map(Router $router)
     {
-        $this->responseFactory = $this->app->make('Cocktales\Http\ResponseFactory');
+        $this->responseFactory = $this->app->make('Cocktales\Application\Http\ResponseFactory');
 
         // Group controllers into the right namespace
         $router->group(['namespace' => $this->namespace], function (Router $router) {
@@ -79,8 +79,7 @@ class RouteServiceProvider extends ServiceProvider
         };
     }
 
-    /**
-     * @param Router $router
+    /**     * @param Router $router
      */
     private function mapApiRoutes(Router $router)
     {

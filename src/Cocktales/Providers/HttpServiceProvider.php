@@ -9,6 +9,6 @@ class HttpServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->app->bind('Cocktales\Http\ResponseFactory', 'Cocktales\Http\LaravelResponseFactory');
+        $this->app->bind('Cocktales\Application\Http\ResponseFactory', 'Cocktales\Application\Http\LaravelResponseFactory');
     }
 }

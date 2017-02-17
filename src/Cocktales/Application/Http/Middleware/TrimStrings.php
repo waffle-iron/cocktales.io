@@ -1,6 +1,6 @@
 <?php
 
-namespace Cocktales\Http\Middleware;
+namespace Cocktales\Application\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\TrimStrings as BaseTrimmer;
 

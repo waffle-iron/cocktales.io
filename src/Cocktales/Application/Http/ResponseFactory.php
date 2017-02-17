@@ -1,6 +1,6 @@
 <?php
 
-namespace Cocktales\Http;
+namespace Cocktales\Application\Http;
 
 interface ResponseFactory
 {

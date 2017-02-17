@@ -1,6 +1,6 @@
 <?php
 
-namespace Cocktales\Http;
+namespace Cocktales\Application\Http;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;

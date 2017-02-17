@@ -1,6 +1,6 @@
 <?php
 
-namespace Cocktales\Http\Middleware;
+namespace Cocktales\Application\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 

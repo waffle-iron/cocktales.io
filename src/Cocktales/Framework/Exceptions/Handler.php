@@ -1,6 +1,6 @@
 <?php
 
-namespace Cocktales\Exceptions;
+namespace Cocktales\Framework\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;
