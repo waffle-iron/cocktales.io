@@ -1,6 +1,6 @@
 <?php
 
-namespace Cocktales\Providers;
+namespace Cocktales\Framework\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;

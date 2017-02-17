@@ -171,12 +171,12 @@ return [
         /*
          * Application Service Providers...
          */
-        Cocktales\Providers\AppServiceProvider::class,
-        Cocktales\Providers\AuthServiceProvider::class,
+        Cocktales\Framework\Providers\AppServiceProvider::class,
+        Cocktales\Framework\Providers\AuthServiceProvider::class,
         // Cocktales\Providers\BroadcastServiceProvider::class,
-        Cocktales\Providers\EventServiceProvider::class,
-        Cocktales\Providers\HttpServiceProvider::class,
-        Cocktales\Providers\RouteServiceProvider::class,
+        Cocktales\Framework\Providers\EventServiceProvider::class,
+        Cocktales\Framework\Providers\HttpServiceProvider::class,
+        Cocktales\Framework\Providers\RouteServiceProvider::class,
 
     ],
 
