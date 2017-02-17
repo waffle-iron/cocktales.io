@@ -1,6 +1,6 @@
 {
     "name": "cocktales/app",
-    "description": "Cocktale",
+    "description": "Cocktales",
     "keywords": ["framework", "laravel"],
     "require": {
         "php": ">=5.6.4",
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "classmap": [
-            "database"
+            "src/database"
         ],
         "psr-4": {
             "Cocktales\\": "src/Cocktales"
