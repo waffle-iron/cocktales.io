@@ -17,7 +17,7 @@ folders:
 
 sites:
     - map: cocktales.app
-      to: "/home/vagrant/cocktales-io/public"
+      to: "/home/vagrant/cocktales-io/src/public"
 
 databases:
     - homestead
