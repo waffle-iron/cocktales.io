@@ -1,8 +1,8 @@
 <?php
 
-namespace Cocktales\Http\Controllers\Auth;
+namespace Cocktales\Application\Http\Controllers\Auth;
 
-use Cocktales\Http\Controllers\Controller;
+use Cocktales\Application\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
 class ForgotPasswordController extends Controller

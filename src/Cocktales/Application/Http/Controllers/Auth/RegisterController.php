@@ -1,9 +1,9 @@
 <?php
 
-namespace Cocktales\Http\Controllers\Auth;
+namespace Cocktales\Application\Http\Controllers\Auth;
 
 use Cocktales\User;
-use Cocktales\Http\Controllers\Controller;
+use Cocktales\Application\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 

@@ -4,6 +4,7 @@ namespace Cocktales\Framework\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -19,7 +20,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'Opia\Application\Http\Controllers';
+    protected $namespace = 'Cocktales\Application\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -52,6 +53,8 @@ class RouteServiceProvider extends ServiceProvider
             $this->mapAppRoutes($router);
 
             $this->mapPublicRoutes($router);
+
+            $this->mapAuthRoutes($router);
         });
     }
 
@@ -63,6 +66,15 @@ class RouteServiceProvider extends ServiceProvider
             $router->any('/', function () {
                 return $this->responseFactory->makeViewResponse('http.layouts.welcome');
             });
+        });
+    }
+
+    private function mapAuthRoutes(Router $router)
+    {
+        Route::group([
+            'middleware' => 'web',
+        ], function ($router) {
+            require base_path('Cocktales/Framework/Auth/authroutes.php');
         });
     }
 

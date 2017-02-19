@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title></title>
+    <title>{{ config('app.name', 'CockTales') }}</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
@@ -54,17 +54,17 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="">Login</a></li>
-                        <li><a href="">Register</a></li>
+                        <li><a href="{{ url('/login') }}">Login</a></li>
+                        <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="position: relative; padding-left: 50px;">
-                                <img src="" class="img-responsive" style="width:30px; height:30px; float:left; border-radius:50%; margin-right:25px; position: absolute; top: 10px; left: 10px;">
+                                <img src="{{ url('/uploads/avatars/' . Auth::user()->avatar) }}" class="img-responsive" style="width:30px; height:30px; float:left; border-radius:50%; margin-right:25px; position: absolute; top: 10px; left: 10px;">
                                 {{ Auth::user()->username }} <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href=""><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
+                                <li><a href="{{ url('/profile/'.Auth::user()->username) }}"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
                                 <li>
                                     <a href="{{ url('/logout') }}"
                                        onclick="event.preventDefault();
@@ -72,7 +72,7 @@
                                         Logout
                                     </a>
 
-                                    <form id="logout-form" action="" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}
                                     </form>
                                 </li>
