@@ -77,9 +77,7 @@ class RouteServiceProvider extends ServiceProvider
 
     private function mapAuthRoutes(Router $router)
     {
-        Route::group([
-            'middleware' => 'web',
-        ], function ($router) {
+        Route::group(['middleware' => 'web',], function ($router) {
             Auth::routes();
         });
     }
