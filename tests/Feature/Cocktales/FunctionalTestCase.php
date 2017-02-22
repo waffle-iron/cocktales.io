@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\TestCase;
 
 abstract class FunctionalTestCase extends TestCase
 {
+
     use RunsMigrations;
 
     /**

@@ -174,7 +174,9 @@ return [
         Cocktales\Framework\Providers\AppServiceProvider::class,
         Cocktales\Framework\Providers\AuthServiceProvider::class,
         // Cocktales\Providers\BroadcastServiceProvider::class,
+        Cocktales\Framework\Providers\RepositoryServiceProvider::class,
         Cocktales\Framework\Providers\EventServiceProvider::class,
+        Cocktales\Framework\Providers\FrameworkServiceProvider::class,
         Cocktales\Framework\Providers\HttpServiceProvider::class,
         Cocktales\Framework\Providers\RouteServiceProvider::class,
 

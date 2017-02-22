@@ -3,6 +3,7 @@
 namespace Cocktales\Domain\Profile;
 
 use Cocktales\Framework\Exceptions\NotFoundException;
+use Illuminate\Support\Collection;
 
 interface Repository
 {
@@ -15,7 +16,7 @@ interface Repository
      *
      * @return Profile
      */
-    public function saveProfile(callable $callback): Profile;
+    public function addProfile(callable $callback): Profile;
 
     /**
      * @param int $id
@@ -30,4 +31,11 @@ interface Repository
      * @throws NotFoundException
      */
     public function getProfileByUserId(int $id);
+
+    /**
+     * Return a collection of all profiles
+     *
+     * @return Collection
+     */
+    public function getProfiles(): Collection;
 }
