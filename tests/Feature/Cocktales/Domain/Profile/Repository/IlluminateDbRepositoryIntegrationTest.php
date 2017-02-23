@@ -19,33 +19,33 @@ class IlluminateDbRepositoryIntegrationTest extends FunctionalTestCase
         $this->repository = $this->app->make(Repository::class);
     }
 
-//    public function test_addProfile_increases_database_count()
-//    {
-//        $this->repository->addProfile(function (Profile $profile) {
-//            $profile->setUserId(5);
-//                $profile->setLocation('Consett');
-//                $profile->setSlogan('Yo yo yo');
-//                $profile->setAvatar('picture.jpg');
-//        });
-//
-//        $fetched = $this->repository->getProfiles();
-//
-//        $this->assertEquals(1, $fetched->count());
-//    }
+    public function test_addProfile_increases_database_count()
+    {
+        $this->repository->addProfile(function (Profile $profile) {
+            $profile->setUserId(5);
+                $profile->setLocation('Consett');
+                $profile->setSlogan('Yo yo yo');
+                $profile->setAvatar('picture.jpg');
+        });
 
-//    public function test_updateProfile_does_not_increase_table_count()
-//    {
-//        $this->repository->addProfile(function (Profile $profile) {
-//            $profile->setUserId(5);
-//            $profile->setLocation('Consett');
-//            $profile->setSlogan('Yo yo yo');
-//            $profile->setAvatar('picture.jpg');
-//        });
-//
-//        $fetched = $this->repository->getProfileByUserId(5);
-//
-//        dump($fetched->getId());
-//    }
+        $fetched = $this->repository->getProfiles();
+
+        $this->assertEquals(1, $fetched->count());
+    }
+
+    public function test_updateProfile_does_not_increase_table_count()
+    {
+        $this->repository->addProfile(function (Profile $profile) {
+            $profile->setUserId(5);
+            $profile->setLocation('Consett');
+            $profile->setSlogan('Yo yo yo');
+            $profile->setAvatar('picture.jpg');
+        });
+
+        $fetched = $this->repository->getProfileByUserId(5);
+
+        dump($fetched->getId());
+    }
 
     public function test_profile_can_be_fetched_by_user_id()
     {
