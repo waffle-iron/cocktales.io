@@ -42,9 +42,11 @@ class IlluminateDbRepositoryIntegrationTest extends FunctionalTestCase
             $profile->setAvatar('picture.jpg');
         });
 
-        $fetched = $this->repository->getProfileByUserId(5);
+        $fetched = $this->repository->getProfiles();
 
-        dump($fetched->getId());
+        // @todo Fetch Profile, update it then save it back into database then count
+
+        $this->assertEquals(1, $fetched->count());
     }
 
     public function test_profile_can_be_fetched_by_user_id()

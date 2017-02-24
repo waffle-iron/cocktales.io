@@ -36,8 +36,11 @@ trait RunsMigrations
      */
     protected function rollbackMigrations()
     {
-        while ($this->migrator->rollback() > 0) {
+        $left = count($this->migrator->getRepository()->getRan());
 
+        while ($left > 0) {
+            $this->migrator->rollback([database_path('migrations')]);
+            $left = count($this->migrator->getRepository()->getRan());
         }
         \Schema::drop('migrations');
     }
