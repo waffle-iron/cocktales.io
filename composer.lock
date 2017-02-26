@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce39f93cea70a53c3557ac9c84a4e80d",
+    "content-hash": "08ecf2dd9ff9b8cf6950643ceff7ab03",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -60,6 +60,51 @@
                 "time"
             ],
             "time": "2017-02-15T08:51:03+00:00"
+        },
+        {
+            "name": "chief/chief",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adamnicholson/Chief.git",
+                "reference": "83458ac4c01ce17068c3f43394e69a4de9c4d96d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adamnicholson/Chief/zipball/83458ac4c01ce17068c3f43394e69a4de9c4d96d",
+                "reference": "83458ac4c01ce17068c3f43394e69a4de9c4d96d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "illuminate/container": "*@dev",
+                "illuminate/events": "*@dev",
+                "league/container": "~1.3",
+                "psr/log": "*@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Chief\\": [
+                        "src/",
+                        "tests/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Nicholson",
+                    "email": "adamnicholson10@gmail.com"
+                }
+            ],
+            "description": "A powerful standalone command bus package",
+            "time": "2016-02-28T13:57:22+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2578,25 +2623,30 @@
         },
         {
             "name": "phpunit/php-timer",
-            "version": "1.0.8",
+            "version": "1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-timer.git",
-                "reference": "38e9124049cf1a164f1e4537caf19c99bf1eb260"
+                "reference": "3dcf38ca72b158baf0bc245e9184d3fdffa9c46f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/38e9124049cf1a164f1e4537caf19c99bf1eb260",
-                "reference": "38e9124049cf1a164f1e4537caf19c99bf1eb260",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/3dcf38ca72b158baf0bc245e9184d3fdffa9c46f",
+                "reference": "3dcf38ca72b158baf0bc245e9184d3fdffa9c46f",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": "^5.3.3 || ^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4|~5"
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
             "autoload": {
                 "classmap": [
                     "src/"
@@ -2618,7 +2668,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2016-05-12T18:03:57+00:00"
+            "time": "2017-02-26T11:10:40+00:00"
         },
         {
             "name": "phpunit/php-token-stream",
