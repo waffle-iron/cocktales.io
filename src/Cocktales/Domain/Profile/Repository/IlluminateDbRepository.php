@@ -59,13 +59,37 @@ class IlluminateDbRepository implements Repository
     }
 
     /**
+     * Take a profile object as the argument and saves into database if existing record is there
+     *
+     * @param Profile $profile
+     * @return Profile
+     * @throws NotFoundException
+     */
+    public function updateProfile(Profile $profile): Profile
+    {
+        if (!$this->table()->where('id', $profile->getId())->exists()) {
+            throw new NotFoundException("Profile with ID {$profile->getId()} does not exist");
+        }
+
+        $this->table()->where('id', $profile->getId())->update($this->hydrator->toRawData($profile));
+
+        return $profile;
+    }
+
+    /**
      * @param int $id
      * @return Profile
      * @throws NotFoundException
      */
     public function getProfileById(int $id)
     {
-        // TODO: Implement getProfileById() method.
+        $data = $this->table()->where('id', $id)->first();
+
+        if (!$data) {
+            throw new NotFoundException("Profile with ID {$id} does not exist");
+        }
+
+        return $this->hydrator->fromRawData($data);
     }
 
     /**

@@ -31,6 +31,17 @@ class IlluminateDbRepositoryIntegrationTest extends FunctionalTestCase
         $fetched = $this->repository->getProfiles();
 
         $this->assertEquals(1, $fetched->count());
+
+        $this->repository->addProfile(function (Profile $profile) {
+            $profile->setUserId(22);
+            $profile->setLocation('New York');
+            $profile->setSlogan('Hello');
+            $profile->setAvatar('newpic.jpg');
+        });
+
+        $fetched = $this->repository->getProfiles();
+
+        $this->assertEquals(2, $fetched->count());
     }
 
     public function test_updateProfile_does_not_increase_table_count()
@@ -42,9 +53,11 @@ class IlluminateDbRepositoryIntegrationTest extends FunctionalTestCase
             $profile->setAvatar('picture.jpg');
         });
 
-        $fetched = $this->repository->getProfiles();
+        $fetched = $this->repository->getProfileById(1);
 
-        // @todo Fetch Profile, update it then save it back into database then count
+        $this->repository->updateProfile($fetched);
+
+        $fetched = $this->repository->getProfiles();
 
         $this->assertEquals(1, $fetched->count());
     }

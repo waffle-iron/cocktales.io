@@ -19,6 +19,15 @@ interface Repository
     public function addProfile(callable $callback): Profile;
 
     /**
+     * Take a profile object as the argument and saves into database if existing record is there
+     *
+     * @param Profile $profile
+     * @return Profile
+     * @throws NotFoundException
+     */
+    public function updateProfile(Profile $profile): Profile;
+
+    /**
      * @param int $id
      * @return Profile
      * @throws NotFoundException
