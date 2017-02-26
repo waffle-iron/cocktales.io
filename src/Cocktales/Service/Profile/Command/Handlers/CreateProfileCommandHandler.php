@@ -24,6 +24,8 @@ class CreateProfileCommandHandler
 
     public function handle(CreateProfileCommand $command)
     {
-        
+        $this->orchestrator->addProfile(function (Profile $profile) {
+              $profile->setUserId();
+        });
     }
 }
