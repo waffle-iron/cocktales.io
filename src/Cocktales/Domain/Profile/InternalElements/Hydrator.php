@@ -1,7 +1,8 @@
 <?php
 
-namespace Cocktales\Domain\Profile;
+namespace Cocktales\Domain\Profile\InternalElements;
 
+use Cocktales\Domain\Profile\Profile;
 
 class Hydrator
 {

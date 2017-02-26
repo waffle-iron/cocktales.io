@@ -1,9 +1,10 @@
 <?php
 
-namespace Cocktales\Domain\Profile\Repository;
+namespace Cocktales\Domain\Profile\InternalElements\Repository;
 
+use Cocktales\Domain\Profile\InternalElements\Repository;
 use Cocktales\Domain\Profile\Profile;
-use Cocktales\Domain\Profile\Repository;
+use Cocktales\Framework\Exceptions\NotFoundException;
 use Cocktales\FunctionalTestCase;
 
 class IlluminateDbRepositoryIntegrationTest extends FunctionalTestCase
@@ -74,5 +75,17 @@ class IlluminateDbRepositoryIntegrationTest extends FunctionalTestCase
         $fetched = $this->repository->getProfileByUserId(15);
 
         $this->assertEquals('Consett', $fetched->getLocation());
+    }
+
+    public function test_updateProfile_throws_exception_if_profile_is_not_already_in_database()
+    {
+        $this->expectException(NotFoundException::class);
+        $this->repository->updateProfile(new Profile);
+    }
+
+    public function test_exception_thrown_if_fetching_profile_that_is_not_in_the_database()
+    {
+        $this->expectException(NotFoundException::class);
+        $this->repository->getProfileById(10);
     }
 }

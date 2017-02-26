@@ -2,8 +2,8 @@
 
 namespace Cocktales\Framework\Providers;
 
-use Cocktales\Domain\Profile\Repository;
-use Cocktales\Domain\Profile\Repository\IlluminateDbRepository;
+use Cocktales\Domain\Profile\InternalElements\Repository;
+use Cocktales\Domain\Profile\InternalElements\Repository\IlluminateDbRepository;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider

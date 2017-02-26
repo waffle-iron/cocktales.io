@@ -1,10 +1,10 @@
 <?php
 
-namespace Cocktales\Domain\Profile\Repository;
+namespace Cocktales\Domain\Profile\InternalElements\Repository;
 
-use Cocktales\Domain\Profile\Hydrator;
+use Cocktales\Domain\Profile\InternalElements\Hydrator;
+use Cocktales\Domain\Profile\InternalElements\Repository;
 use Cocktales\Domain\Profile\Profile;
-use Cocktales\Domain\Profile\Repository;
 use Cocktales\Framework\Datetime\Clock;
 use Cocktales\Framework\Exceptions\NotFoundException;
 use Illuminate\Database\Connection;

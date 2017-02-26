@@ -2,6 +2,7 @@
 
 namespace Cocktales\Domain\Profile;
 
+use Cocktales\Domain\Profile\InternalElements\Hydrator;
 
 class HydratorTest extends \PHPUnit_Framework_TestCase
 {
