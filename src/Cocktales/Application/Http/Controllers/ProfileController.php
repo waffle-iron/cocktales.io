@@ -20,9 +20,9 @@ class ProfileController extends BaseController
 
     /**
      * @param Request $request
-     * @return Response
+     * @return RedirectResponse
      */
-    public function store(Request $request): Response
+    public function store(Request $request): RedirectResponse
     {
         $data = (object) [
             'user_id' => $request->get('user_id'),
