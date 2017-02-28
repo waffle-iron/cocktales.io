@@ -11,5 +11,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(Repository::class, IlluminateDbRepository::class);
+        $this->app->singleton(\Cocktales\Domain\User\Components\Repository::class,
+            \Cocktales\Domain\User\Components\Repository\IlluminateDbRepository::class);
     }
 }
