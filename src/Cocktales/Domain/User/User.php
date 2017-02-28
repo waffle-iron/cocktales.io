@@ -10,6 +10,23 @@ class User
     use PrivateFluentHelpers;
 
     /**
+     * @param int $id
+     * @return User
+     */
+    public function setId(int $id): User
+    {
+        return $this->set('id', $id);
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->get('id');
+    }
+
+    /**
      * @param string $name
      * @return User
      */
