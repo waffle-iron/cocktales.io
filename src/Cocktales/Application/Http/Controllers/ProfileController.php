@@ -4,6 +4,7 @@ namespace Cocktales\Application\Http\Controllers;
 
 use Cocktales\Service\Profile\Command\CreateProfileCommand;
 use Cocktales\Service\Profile\Command\ViewProfileCommand;
+use Cocktales\Service\User\Command\ViewUserCommand;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -20,9 +21,9 @@ class ProfileController extends BaseController
 
     /**
      * @param Request $request
-     * @return Response
+     * @return RedirectResponse
      */
-    public function store(Request $request): Response
+    public function store(Request $request): RedirectResponse
     {
         $data = (object) [
             'user_id' => $request->get('user_id'),
@@ -43,7 +44,8 @@ class ProfileController extends BaseController
     public function show(int $user_id): Response
     {
         return $this->responseFactory->makeViewResponse('http.profile.show', [
-            'profile' => $this->bus->execute(new ViewProfileCommand($user_id))
+            'profile' => $this->bus->execute(new ViewProfileCommand($user_id)),
+            'user' => $this->bus->execute(new ViewUserCommand($user_id))
         ]);
     }
 }
