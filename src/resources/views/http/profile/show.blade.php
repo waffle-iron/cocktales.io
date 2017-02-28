@@ -15,11 +15,15 @@
 
                 <div class="profile-info">
 
-                    <p class="profile-title"></p>
+                    <p class="profile-title">{{ $user->getUsername() }}</p>
 
                     <p class="location">{{ $profile->getLocation() }}</p>
 
                     <p class="drink">{{ $profile->getFavouriteDrink() }}</p>
+
+                    <p class="name">{{ $user->getName() }}</p>
+
+                    <p class="email">{{ $user->getEmail() }}</p>
 
                 </div>
 
