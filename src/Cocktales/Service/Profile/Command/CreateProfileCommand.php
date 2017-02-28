@@ -55,8 +55,8 @@ class CreateProfileCommand implements Command
     /**
      * @return string
      */
-    public function getAvatar(): string
+    public function getFavouriteDrink(): string
     {
-        return $this->data->avatar;
+        return $this->data->favourite_drink;
     }
 }

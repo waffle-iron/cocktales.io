@@ -26,7 +26,7 @@ class IlluminateDbRepositoryIntegrationTest extends FunctionalTestCase
             $profile->setUserId(5);
                 $profile->setLocation('Consett');
                 $profile->setSlogan('Yo yo yo');
-                $profile->setAvatar('picture.jpg');
+                $profile->setFavouriteDrink('Water');
         });
 
         $fetched = $this->repository->getProfiles();
@@ -37,7 +37,7 @@ class IlluminateDbRepositoryIntegrationTest extends FunctionalTestCase
             $profile->setUserId(22);
             $profile->setLocation('New York');
             $profile->setSlogan('Hello');
-            $profile->setAvatar('newpic.jpg');
+            $profile->setFavouriteDrink('Water');
         });
 
         $fetched = $this->repository->getProfiles();
@@ -51,7 +51,7 @@ class IlluminateDbRepositoryIntegrationTest extends FunctionalTestCase
             $profile->setUserId(5);
             $profile->setLocation('Consett');
             $profile->setSlogan('Yo yo yo');
-            $profile->setAvatar('picture.jpg');
+            $profile->setFavouriteDrink('Water');
         });
 
         $fetched = $this->repository->getProfileById(1);
@@ -69,7 +69,7 @@ class IlluminateDbRepositoryIntegrationTest extends FunctionalTestCase
             $profile->setUserId(15);
             $profile->setLocation('Consett');
             $profile->setSlogan('Yo yo yo');
-            $profile->setAvatar('picture.jpg');
+            $profile->setFavouriteDrink('Water');
         });
 
         $fetched = $this->repository->getProfileByUserId(15);

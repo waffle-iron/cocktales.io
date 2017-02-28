@@ -20,7 +20,7 @@ class HydratorTest extends \PHPUnit_Framework_TestCase
             ->setUserId(5)
             ->setLocation('London')
             ->setSlogan('Be Merry')
-            ->setAvatar('picture.jpg')
+            ->setFavouriteDrink('Beer')
             ->setDateCreated(new \DateTimeImmutable('2017-02-20 20:43:00'))
             ->setDateModified(new \DateTimeImmutable('2017-02-20 20:43:00')));
 
@@ -28,7 +28,7 @@ class HydratorTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(5, $data->user_id);
         $this->assertEquals('London', $data->location);
         $this->assertEquals('Be Merry', $data->slogan);
-        $this->assertEquals('picture.jpg', $data->avatar);
+        $this->assertEquals('Beer', $data->favourite_drink);
         $this->assertEquals('2017-02-20 20:43:00', $data->created_at);
         $this->assertEquals('2017-02-20 20:43:00', $data->updated_at);
     }
@@ -41,7 +41,7 @@ class HydratorTest extends \PHPUnit_Framework_TestCase
                 'user_id' => 5,
                 'location' => 'London',
                 'slogan' => 'Be Merry',
-                'avatar' => 'picture.jpg',
+                'favourite_drink' => 'Beer',
                 'created_at' => '2017-02-16 10:42:00',
                 'updated_at' => '2017-02-16 10:42:00'
             ]);
@@ -50,7 +50,7 @@ class HydratorTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(5, $profile->getUserId());
         $this->assertEquals('London', $profile->getLocation());
         $this->assertEquals('Be Merry', $profile->getSlogan());
-        $this->assertEquals('picture.jpg', $profile->getAvatar());
+        $this->assertEquals('Beer', $profile->getFavouriteDrink());
         $this->assertEquals('2017-02-16 10:42:00', $profile->getDateCreated());
         $this->assertEquals('2017-02-16 10:42:00', $profile->getDateModified());
     }

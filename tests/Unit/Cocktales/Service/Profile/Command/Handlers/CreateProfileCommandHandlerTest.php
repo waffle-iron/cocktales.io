@@ -2,7 +2,6 @@
 
 namespace Cocktales\Service\Profile\Command\Handlers;
 
-
 use Cocktales\Domain\Profile\ProfileOrchestrator;
 use Cocktales\Service\Profile\Command\CreateProfileCommand;
 use Prophecy\Argument;
@@ -19,7 +18,7 @@ class CreateProfileCommandHandlerTest extends \PHPUnit_Framework_TestCase
             'user_id' => 3,
             'location' => 'Consett',
             'slogan' => 'Millionaire in the making',
-            'avatar' => 'image.jpg'
+            'favourite_drink' => 'Fosters'
         ]);
 
         $orchestrator->addProfile(Argument::any())->shouldBeCalled();

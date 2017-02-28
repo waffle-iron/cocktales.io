@@ -11,7 +11,7 @@ class ProfileTest extends \PHPUnit_Framework_TestCase
             ->setUserId(5)
             ->setLocation('Consett, Durham')
             ->setSlogan('Oi Oi')
-            ->setAvatar('picture.png')
+            ->setFavouriteDrink('Pint of fosters')
             ->setDateCreated(new \DateTimeImmutable('2017-02-19 21:48:00'))
             ->setDateModified(new \DateTimeImmutable('2017-02-19 21:48:00'));
 
@@ -19,6 +19,7 @@ class ProfileTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(007, $profile->getId());
         $this->assertEquals(5, $profile->getUserId());
         $this->assertEquals('Oi Oi', $profile->getSlogan());
+        $this->assertEquals('Pint of fosters', $profile->getFavouriteDrink());
         $this->assertEquals('2017-02-19 21:48:00', $profile->getDateCreated());
         $this->assertEquals('2017-02-19 21:48:00', $profile->getDateModified());
     }

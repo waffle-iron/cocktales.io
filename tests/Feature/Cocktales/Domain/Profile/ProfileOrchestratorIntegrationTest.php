@@ -28,7 +28,7 @@ class ProfileOrchestratorIntegrationTest extends FunctionalTestCase
             $profile->setUserId(5);
             $profile->setLocation('Consett');
             $profile->setSlogan("Let's get drunk");
-            $profile->setAvatar('picture.jpg');
+            $profile->setFavouriteDrink('Water');
         });
 
         $fetched = $this->repository->getProfileById(1);
@@ -44,7 +44,7 @@ class ProfileOrchestratorIntegrationTest extends FunctionalTestCase
             $profile->setUserId(5);
             $profile->setLocation('Consett');
             $profile->setSlogan("Let's get drunk");
-            $profile->setAvatar('picture.jpg');
+            $profile->setFavouriteDrink('Water');
         });
 
         $fetched = $this->repository->getProfileById(1);
@@ -54,4 +54,19 @@ class ProfileOrchestratorIntegrationTest extends FunctionalTestCase
         $this->assertEquals(1, $this->repository->getProfiles()->count());
     }
 
+    public function test_getProfileByUserId_retrieves_profile_from_database()
+    {
+        $this->orchestrator->addProfile(function (Profile $profile) {
+            $profile->setUserId(5);
+            $profile->setLocation('Consett');
+            $profile->setSlogan("Let's get drunk");
+            $profile->setFavouriteDrink('Water');
+        });
+
+        $fetched = $this->orchestrator->getProfileByUserId(5);
+
+        $this->assertEquals('Consett', $fetched->getLocation());
+        $this->assertEquals("Let's get drunk", $fetched->getSlogan());
+        $this->assertEquals('Water', $fetched->getFavouriteDrink());
+    }
 }

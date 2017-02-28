@@ -17,7 +17,7 @@ class Hydrator
             'user_id' => $profile->getUserId(),
             'location' => $profile->getLocation(),
             'slogan' => $profile->getSlogan(),
-            'avatar' => $profile->getAvatar(),
+            'favourite_drink' => $profile->getFavouriteDrink(),
             'created_at' => $profile->getDateCreated(),
             'updated_at' => $profile->getDateModified()
         ];
@@ -33,7 +33,7 @@ class Hydrator
             ->setUserId($data->user_id)
             ->setLocation($data->location)
             ->setSlogan($data->slogan)
-            ->setAvatar($data->avatar)
+            ->setFavouriteDrink($data->favourite_drink)
             ->setDateCreated(new \DateTimeImmutable($data->created_at))
             ->setDateModified(new \DateTimeImmutable($data->updated_at));
     }

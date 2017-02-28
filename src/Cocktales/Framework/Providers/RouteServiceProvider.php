@@ -72,6 +72,16 @@ class RouteServiceProvider extends ServiceProvider
             $router->get('/home', function () {
                return $this->responseFactory->makeViewResponse('http.home');
             });
+
+            // Profile
+            $router->get('/profile/create', 'ProfileController@create');
+            $router->get('/profile/{user_id}/show', function ($user_id) {
+                return $this->app->call('Cocktales\Application\Http\Controllers\ProfileController@show', ['user_id' => $user_id]);
+            });
+            $router->post('/profile/create', 'ProfileController@store');
+//            $router->get('/profile/{user_id}/create', function ($user_id) {
+//                return $this->app->call(ProfileController::class . "@create", ['user_id' => $user_id]);
+//            });
         });
     }
 

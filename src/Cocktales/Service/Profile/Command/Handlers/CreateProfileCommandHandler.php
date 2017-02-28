@@ -28,7 +28,7 @@ class CreateProfileCommandHandler
               $profile->setUserId($command->getUserId());
               $profile->setLocation($command->getLocation());
               $profile->setSlogan($command->getSlogan());
-              $profile->setAvatar($command->getAvatar());
+              $profile->setFavouriteDrink($command->getFavouriteDrink());
         });
     }
 }
