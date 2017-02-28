@@ -2,7 +2,6 @@
 
 namespace Cocktales\Application\Console;
 
-use Cocktales\Service\Profile\Command\CreateProfileCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
