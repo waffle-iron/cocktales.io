@@ -5,7 +5,7 @@
     "require": {
         "php": ">=5.6.4",
         "cakephp/chronos": "^1.1",
-        "doctrine/dbal": "^2.5",
+        "chief/chief": "^1.2",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0"
     },
@@ -25,7 +25,10 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Cocktales\\": [
+                "./tests/Unit/Cocktales",
+                "./tests/Feature/Cocktales"
+            ]
         }
     },
     "scripts": {

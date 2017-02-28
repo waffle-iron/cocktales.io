@@ -64,19 +64,19 @@ class Profile
     }
 
     /**
-     * @param string $avatar
+     * @param string $drink
      * @return Profile
      */
-    public function setAvatar(string $avatar): Profile
+    public function setFavouriteDrink(string $drink): Profile
     {
-        return $this->set('avatar', $avatar);
+        return $this->set('drink', $drink);
     }
 
     /**
      * @return string
      */
-    public function getAvatar(): string
+    public function getFavouriteDrink(): string
     {
-        return $this->get('avatar');
+        return $this->get('drink');
     }
 }
